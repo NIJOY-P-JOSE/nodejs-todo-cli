@@ -52,3 +52,5 @@ $ node task.js help
 - ✅ Completed tasks are saved in `completed.txt`
 - 🔒 Uses **synchronous file operations** (`fs.readFileSync`, `fs.writeFileSync`) for consistency
 - 🔢 Tasks are **sorted by priority (ascending)** — lower number = higher priority
+
+
