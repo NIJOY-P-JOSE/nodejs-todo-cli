@@ -32,7 +32,6 @@ switch (command) {
       break;
     }
 
-
     let data = readTask("task.txt");
     let tasks = data.map((x) => {
       let p = parseInt(x.split(" ")[0]);
@@ -52,11 +51,7 @@ switch (command) {
       break;
     }
 
-
-
-
     tasks.push({ priority: priority, desc: task });
-
     tasks.sort((a, b) => a.priority - b.priority); //sort tasks by smallest to largest priority (a-b=-ve then a first OR a-b=+ve then b first OR a-b=0 then they are in same order) )
 
     data = tasks.map((x) => `${x.priority} ${x.desc}`).join("\n");
@@ -108,6 +103,7 @@ switch (command) {
     console.log(`Deleted task #${index}`);
     break;
 
+    
   case "done":
     let data2 = readTask("task.txt");
 
