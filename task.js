@@ -59,6 +59,7 @@ switch (command) {
     console.log(`Added task: "${task}" with priority ${priority}`);
     break;
 
+    
   case "ls":
     const list = readTask("task.txt");
     if (list.length === 0) {
@@ -74,6 +75,7 @@ switch (command) {
     });
     break;
 
+    
   case "del":
     const index = parseInt(args[3]); //index of task
 
@@ -135,6 +137,7 @@ switch (command) {
     console.log(`Marked item as done.`);
     break;
 
+    
   case "report":
     let completed = readTask("completed.txt");
     let pending = readTask("task.txt");
