@@ -21,7 +21,7 @@ switch (command) {
     showHelp();
     break;
 
-
+    
   case "add":
     const priority = args[3];
     const task = args.slice(4).join(" ");
@@ -40,7 +40,6 @@ switch (command) {
     });
 
     const dupli = tasks.filter((x)=> x.priority == priority);
-
     const newTasks = tasks.map( (x)=>{
       if(x.priority == priority){
         
@@ -53,7 +52,6 @@ switch (command) {
 
     tasks.push({ priority: priority, desc: task });
     tasks.sort((a, b) => a.priority - b.priority); //sort tasks by smallest to largest priority (a-b=-ve then a first OR a-b=+ve then b first OR a-b=0 then they are in same order) )
-
     data = tasks.map((x) => `${x.priority} ${x.desc}`).join("\n");
     fs.writeFileSync("task.txt", `${data}\n`);
     console.log(`Added task: "${task}" with priority ${priority}`);
@@ -108,24 +106,21 @@ switch (command) {
     
   case "done":
     let data2 = readTask("task.txt");
-
     const index2 = parseInt(args[3]);
     if (isNaN(index2) || args.slice(4).length > 0) {
       console.log("Error: Missing NUMBER for marking tasks as done.");
       break;
     }
-
     if (data2.length === 0) {
       console.log("There are no pending tasks!");
       break;
     }
-
     if (index2 > data2.length || index2 < 1) {
       console.log(`Error: no incomplete item with index #${index2} exists.`);
       break;
     }
+    
     let doneTask = data2[index2 - 1].split(" ").slice(1).join(" "); //take the done task
-
     let doneList = readTask("completed.txt");
     doneList.push(doneTask); //push the done task
 
@@ -145,7 +140,6 @@ switch (command) {
       console.log("Pending : 0\n\nCompleted : 0");
       break;
     }
-
     const pendingTasks = pending.map((x) => {
       //map the pending tasks as {priority, desc}
       let p = x.split(" ")[0];
