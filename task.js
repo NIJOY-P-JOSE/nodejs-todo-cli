@@ -75,7 +75,6 @@ switch (command) {
     
   case "del":
     const index = parseInt(args[3]); //index of task
-
     if (isNaN(index) || args.slice(4).length > 0) {
       //Error if index is not a number
       console.log("Error: Missing NUMBER for deleting tasks.");
