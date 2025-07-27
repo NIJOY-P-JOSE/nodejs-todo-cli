@@ -1,6 +1,5 @@
 const args = process.argv;
 const command = args[2];
-
 const fs = require("fs");
 
 function showHelp() {
