@@ -2,6 +2,7 @@ const args = process.argv;
 const command = args[2];
 const fs = require("fs");
 
+
 function showHelp() {
   console.log(`Usage :-
 $ ./task add 2 hello world    # Add a new item with priority 2 and text "hello world" to the list
@@ -14,6 +15,7 @@ $ ./task report               # Statistics`);
 
 const readTask = (path) =>
   fs.existsSync(path) ? fs.readFileSync(path, "utf8").trim().split("\n") : []; //if file exists then read it else return empty array
+
 
 switch (command) {
   case "help":
