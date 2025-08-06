@@ -13,6 +13,7 @@ $ ./task help                 # Show usage
 $ ./task report               # Statistics`);
 }
 
+
 const readTask = (path) =>
   fs.existsSync(path) ? fs.readFileSync(path, "utf8").trim().split("\n") : []; //if file exists then read it else return empty array
 
